@@ -5,7 +5,7 @@ import {
   Touchable,
   TouchableOpacity,
 } from "react-native";
-
+import {getAllTodoItems, addTodoItem} from "../database.js";
 import {NativeWindStyleSheet} from "nativewind";
 import EditScreenInfo from "@/components/EditScreenInfo";
 import {Text, View} from "@/components/Themed";
