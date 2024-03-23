@@ -37,7 +37,7 @@ export default function TabOneScreen() {
           />
         )}
       />
-      <View className="flex-row items-center mb-8 mt-8">
+      <View className="flex-row items-center mb-8 mt-8 bg-white">
         <TextInput
           className="h-full w-80 px-2 py-5 rounded-lg mr-6 bg-[#94A3B8] text-white font-semibold"
           placeholder="Type your task here"
