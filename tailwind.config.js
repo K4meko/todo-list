@@ -8,7 +8,11 @@ module.exports = {
     "./app.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      inset: {
+        "-2": "-0.5rem", // Add more as needed
+      },
+    },
   },
   plugins: [],
 };

@@ -1,26 +1,32 @@
-// import PouchDB from "pouchdb";
-// import {v4 as uuidv4} from "uuid";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-// const database = new PouchDB("my_database");
+const storeData = async value => {
+  try {
+    const jsonValue = JSON.stringify(value);
+    await AsyncStorage.setItem("my-key", jsonValue);
+  } catch (e) {
+    // saving error
+  }
+};
+const clearAll = async () => {
+  try {
+    await AsyncStorage.clear();
+  } catch (e) {
+    // clear error
+  }
 
-// export function addTodoItem(title) {
-//   const todoItem = {
-//     id: uuidv4(),
-//     title: title,
-//     completed: false,
-//   };
-
-//   database
-//     .put(todoItem)
-//     .then(response => console.log("Todo item added: ", response))
-//     .catch(error => console.error("Error adding todo item: ", error));
-// }
-// export function getAllTodoItems() {
-//   return database
-//     .allDocs({include_docs: true})
-//     .then(response => response.rows.map(row => row.doc))
-//     .catch(error => console.error("Error getting todo items: ", error));
-// }
-
-// // Usage
-// //addTodoItem("Buy milk");
+  console.log("Done.");
+};
+const getData = async () => {
+  try {
+    const value = await AsyncStorage.getItem("my-key");
+    if (value !== null) {
+      console.log(JSON.parse(value));
+      return value;
+      w;
+    }
+  } catch (e) {
+    // error reading value
+  }
+};
+export {storeData, getData, clearAll};
